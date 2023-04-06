@@ -17,12 +17,4 @@ jobs:
         run: |
           chmod u+x ./bash/script.sh
           python ./python/wait.py &
-          python ./python/message.py &
           ./bash/script.sh
-          #sleep 15 &
-          #ps aux | grep -i "wait" &
-          #echo "$?" &
-          #still_up=`echo "$?"` &
-          #echo $still_up
-          #if [ ps aux | grep -i "message" ] && [ $still_up -eq 1 ]; then echo "Killing process wait.py..."; else echo "Not found"; fi
-          #if ps aux | grep -i "wait"; then echo "Killing process wait.py..."; else echo "Not found"; fi
