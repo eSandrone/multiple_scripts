@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 5
+sleep 15
 pgrep -l "./python/wait.py"
 ps aux | grep -i "wait.py"
 echo "$?"
