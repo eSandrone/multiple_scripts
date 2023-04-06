@@ -1,0 +1,25 @@
+name: Wait test
+on:
+  workflow_dispatch:
+jobs:
+  time:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Setup python
+        uses: actions/setup-python@v4 
+        with:
+          python-version: 'pypy3.9'
+
+      - name: Execute scripts and kill process if necessary
+        run: | 
+         python3 ./python/message.py & 
+         python3 ./python/wait.py
+         pkill -9 -f message.py
+         
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo OK!
