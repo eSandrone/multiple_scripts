@@ -17,6 +17,7 @@ jobs:
         run: |
           chmod u+x ./bash/script.sh
           python ./python/wait.py & pid_ye=`echo "$!"` & sleep 10;
+          ps aux | grep -i "wait.py"
           echo $pid_ye
           if pgrep -x "python ./python/wait.py" > /dev/null
           then
