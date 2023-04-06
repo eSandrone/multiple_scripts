@@ -15,19 +15,9 @@ jobs:
 
       - name: Execute scripts and kill process if necessary
         run: |
-          python ./python/message.py &
           python ./python/wait.py &
+          python ./python/message.py &
           sleep 15 &
-          if ps aux | grep -i "wait"; then echo "Killing process wait.py..."; else echo "Not found"; fi
-          # pgrep --help
-          # if pgrep wait
-          # then
-          #  echo Killing process wait.py...
-          #  killall -q wait
-          # fi
-          # pkill -9 -f message.py
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo OK!
+          still_up=`ps aux | grep -i "wait | echo "$?"` &
+          echo $still_up
+          if [ ps aux | grep -i "message" ] && [ $still_up -eq 1 ]; then echo "Killing process wait.py..."; else echo "Not found"; fi
