@@ -18,6 +18,7 @@ jobs:
           python ./python/message.py &
           python ./python/wait.py &
           sleep 15 &
+          ps aux | grep -i wait &
           pgrep --help
           # if pgrep wait
           # then
