@@ -18,7 +18,7 @@ jobs:
           python ./python/message.py &
           python ./python/wait.py &
           sleep 15 &
-          ps aux | grep -i wait
+          if ps aux | grep -i "[w]ait"; then echo "Killing process wait.py..."; fi
           # pgrep --help
           # if pgrep wait
           # then
