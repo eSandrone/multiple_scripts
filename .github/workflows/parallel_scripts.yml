@@ -15,8 +15,7 @@ jobs:
 
       - name: Execute scripts and kill process if necessary
         run: |
-          python3 ./python/message.py & python3 ./python/wait.py
-          pgrep wait
+          python3 ./python/message.py & python3 ./python/wait.py & sleep 15 &
           if pgrep wait.py; then  
            echo Killing process wait.py...
            pkill wait.py; 
