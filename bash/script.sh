@@ -1,5 +1,5 @@
 #!/bin/bash
 sleep 15
-pgrep "wait.py"
+pgrep "wait"
 echo "$?"
-if pgrep "wait.py"; then python ../python/message.py; else echo "Tests concluded"; fi
+if pgrep "wait"; then python ../python/message.py; else echo "Tests concluded"; fi
