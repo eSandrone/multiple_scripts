@@ -20,3 +20,4 @@ jobs:
           if pgrep -x "python ./python/wait.py" > /dev/null
           then
             python ./python/message.py
+          fi
