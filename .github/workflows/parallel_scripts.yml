@@ -18,6 +18,7 @@ jobs:
           python ./python/message.py & 
           python ./python/wait.py & 
           sleep 15 &
+          pgrep wait &
           if pgrep wait
           then  
            echo Killing process wait.py...
