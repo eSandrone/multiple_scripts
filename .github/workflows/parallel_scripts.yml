@@ -15,6 +15,7 @@ jobs:
 
       - name: Execute scripts and kill process if necessary
         run: |
+          chmod u+x ./bash/script.sh
           python ./python/wait.py &
           python ./python/message.py &
           ./bash/script.sh
