@@ -15,8 +15,11 @@ jobs:
 
       - name: Execute scripts and kill process if necessary
         run: |
-          python3 ./python/message.py & echo message
-          if pgrep message.py; then pkill message.py; fi
+          python3 ./python/message.py & echo python3 ./python/wait.py
+          if pgrep wait.py; then  
+           echo Killing process wait.py...
+           pkill wait.py; 
+          fi
           #pkill -9 -f message.py
 
       # Runs a set of commands using the runners shell
