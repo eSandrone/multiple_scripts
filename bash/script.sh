@@ -3,4 +3,5 @@ sleep 15
 ps aux | grep -i "wait.py"
 echo "$?"
 pgrep "wait.py"
-if ps aux | grep -i "wait.py"; then echo "Killing process wait.py..."; else echo "Not found"; fi
+echo "$?"
+if pgrep "wait.py"; then echo "Killing process wait.py..."; else echo "Not found"; fi
