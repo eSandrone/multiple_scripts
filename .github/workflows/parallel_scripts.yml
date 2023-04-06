@@ -19,6 +19,8 @@ jobs:
           python ./python/message.py &
           sleep 15 &
           ps aux | grep -i "wait" &
-          still_up=`echo "$?"` &
-          echo $still_up
-          if [ ps aux | grep -i "message" ] && [ $still_up -eq 1 ]; then echo "Killing process wait.py..."; else echo "Not found"; fi
+          #echo "$?" &
+          #still_up=`echo "$?"` &
+          #echo $still_up
+          #if [ ps aux | grep -i "message" ] && [ $still_up -eq 1 ]; then echo "Killing process wait.py..."; else echo "Not found"; fi
+          if ps aux | grep -i "wait"; then echo "Killing process wait.py..."; else echo "Not found"; fi
