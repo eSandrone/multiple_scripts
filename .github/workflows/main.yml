@@ -13,8 +13,10 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
+          $time = Get-Date
           #echo "::set-output name=st::$(date +"%s")"
-          echo "st=Get-Date" >> $env:GITHUB_OUTPUT
+          echo "st=$time" >> $env:GITHUB_OUTPUT
+          $env:GITHUB_OUTPUT
   job_2:
     runs-on: windows-latest
     needs: job_1
@@ -25,6 +27,7 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
+          $env:GITHUB_OUTPUT
           #echo "::set-output name=st::$(date +"%s")"
           echo ${{ needs.job_1.outputs.time }}
 
