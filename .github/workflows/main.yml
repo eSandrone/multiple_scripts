@@ -13,7 +13,7 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
-          echo "::set-output name=st::$(date + "%s")"
+          echo "::set-output name=st::$(date +"%s")"
 
   job_2:
     runs-on: ubuntu-latest
@@ -40,4 +40,4 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
-          echo $(date + "%s")-${{ needs.job_1.outputs.time }}
+          echo $(date +"%s")-${{ needs.job_1.outputs.time }}
