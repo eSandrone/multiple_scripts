@@ -14,7 +14,7 @@ jobs:
         id: time
         run: |
           #echo "::set-output name=st::$(date +"%s")"
-          echo "st=Get-Date >> $GITHUB_OUTPUT
+          echo "st=Get-Date" >> $GITHUB_OUTPUT
   job_2:
     runs-on: windows-latest
     needs: job_1
