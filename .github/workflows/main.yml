@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: job_1
     outputs:
-     time: ${{ steps.time.outputs.time }}
+     time: ${{ steps.time.outputs.st }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -29,6 +29,8 @@ jobs:
         id: time
         run: |
           sleep 10
+          echo ${{ needs.job_1.outputs.time }}
+          echo "st=${{ needs.job_1.outputs.time }}" >> $GITHUB_OUTPUT
   job_3:
     runs-on: ubuntu-latest
     needs: job_2
@@ -41,4 +43,4 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
-          echo $(date +"%s")-${{ needs.job_1.outputs.time }}
+          echo $(date +"%s")-${{ needs.job_2.outputs.time }}
