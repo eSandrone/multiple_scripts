@@ -25,7 +25,7 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
-          echo ${{ needs.job_1.outputs.time }}
+          echo ${{ needs.job_1.outputs.time }}[1]
 
 #   job_2:
 #     runs-on: ubuntu-latest
