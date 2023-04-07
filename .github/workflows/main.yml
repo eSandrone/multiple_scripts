@@ -13,7 +13,7 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
-          $time = Get-Date
+          $time = [Math]::Round((Get-Date).ToFileTime()/10000)
           #echo "::set-output name=st::$(date +"%s")"
           echo "st=$time" >> $env:GITHUB_OUTPUT
           $env:GITHUB_OUTPUT
