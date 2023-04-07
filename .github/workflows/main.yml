@@ -14,7 +14,8 @@ jobs:
         id: time
         run: |
           $time = [Math]::Round((Get-Date).ToFileTime()/10000)
-          echo "st=$time" >> $env:GITHUB_OUTPUT
+          echo "::set-output name=st::$time"
+          #echo "st=$time" >> $env:GITHUB_OUTPUT
   job_2:
     runs-on: windows-latest
     needs: job_1
