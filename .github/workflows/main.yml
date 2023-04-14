@@ -26,6 +26,7 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
+          echo ${{ github.run_id }}
           echo ${{ needs.job_1.outputs.time }}[1]
 
 #   job_2:
