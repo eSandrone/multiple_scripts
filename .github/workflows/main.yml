@@ -4,6 +4,7 @@ on:
 jobs:
   job_1:
     runs-on: windows-latest
+    name: JOB_1
     outputs:
      time: ${{ steps.time.outputs.st }}
     steps:
@@ -13,6 +14,7 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
+          echo ${{ github.job.name }} 
           $time = [Math]::Round((Get-Date).ToFileTime()/10000)
           echo "::set-output name=st::$time"
           #echo "st=$time" >> $env:GITHUB_OUTPUT
