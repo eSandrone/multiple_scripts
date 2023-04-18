@@ -32,7 +32,7 @@ jobs:
         run: |
           curl -L \
           -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer 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"\
+          -H "Authorization: Bearer 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"\
           --url https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ needs.job_1.outputs.gj }}/logs
           ls
           echo ${{ github.run_id }}
