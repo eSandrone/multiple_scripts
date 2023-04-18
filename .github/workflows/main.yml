@@ -6,7 +6,7 @@ jobs:
     runs-on: windows-latest
     name: JOB_1
     outputs:
-     time: ${{ steps.time.outputs.st }}
+     #time: ${{ steps.time.outputs.st }}
      gj: ${{ steps.time.outputs.gj }}
     steps:
       - name: Checkout
@@ -16,8 +16,8 @@ jobs:
         id: time
         run: |
           echo ${{ github.job }} 
-          $time = [Math]::Round((Get-Date).ToFileTime()/10000)
-          echo "::set-output name=st::$time"
+          #$time = [Math]::Round((Get-Date).ToFileTime()/10000)
+          #echo "::set-output name=st::$time"
           echo "::set-output name=gj::${{ github.job }}"
           #echo "st=$time" >> $env:GITHUB_OUTPUT
   job_2:
@@ -33,10 +33,10 @@ jobs:
           curl -L \
           -H "Accept: application/vnd.github+json" \
           -H "Authorization: Bearer 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"\
-          https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ needs.job_1.outputs.gj }}/logs
+          --url https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ needs.job_1.outputs.gj }}/logs
           ls
           echo ${{ github.run_id }}
-          echo ${{ needs.job_1.outputs.time }}[1]
+          #echo ${{ needs.job_1.outputs.time }}[1]
 
 #   job_2:
 #     runs-on: ubuntu-latest
