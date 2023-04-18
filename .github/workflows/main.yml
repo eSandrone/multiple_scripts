@@ -7,6 +7,7 @@ jobs:
     name: JOB_1
     outputs:
      time: ${{ steps.time.outputs.st }}
+     gj: ${{ steps.time.outputs.gj }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -17,9 +18,10 @@ jobs:
           echo ${{ github.job }} 
           $time = [Math]::Round((Get-Date).ToFileTime()/10000)
           echo "::set-output name=st::$time"
+          echo "::set-output name=gj::${{ github.job }}"
           #echo "st=$time" >> $env:GITHUB_OUTPUT
   job_2:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     needs: job_1
     steps:
       - name: Checkout
@@ -28,6 +30,11 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
+          curl -L \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer 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"\
+          https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ needs.job_1.outputs.gj }}/logs
+          ls
           echo ${{ github.run_id }}
           echo ${{ needs.job_1.outputs.time }}[1]
 
