@@ -23,7 +23,7 @@ jobs:
           echo ${{ github.job }} 
           #$time = [Math]::Round((Get-Date).ToFileTime()/10000)
           #echo "::set-output name=st::$time"
-          python ./python/wait.py >> log.txt
+          python ./python/wait.py 2>&1 | tee log.txt
           ls
           cat log.txt
           echo "::set-output name=gj::${{ github.job }}"
