@@ -22,6 +22,7 @@ jobs:
 
       - name: Unzip and read
         run: |
+          pip install requests
           python ./python/get-logs.py ${{ github.event.workflow_run.id }}
           ls
           #echo ${{ github.run_id }}
