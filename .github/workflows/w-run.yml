@@ -10,39 +10,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "pypy3.9"
         
       - name: Try
         run: |
           echo ${{ github.event.workflow_run.id }}
 
-#       - name: Download logs
-#         id: time
-#         uses: actions/github-script@v6
-#         with:
-#           script: |         
-#             let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
-#                owner: context.repo.owner,
-#                repo: context.repo.repo,
-#                run_id: context.payload.workflow_run.id,
-#             });
-#             let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-#               return artifact.name == "run_id"
-#             })[0];
-#             let download = await github.rest.actions.downloadArtifact({
-#                owner: context.repo.owner,
-#                repo: context.repo.repo,
-#                artifact_id: matchArtifact.id,
-#                archive_format: 'zip',
-#             });
-#             let fs = require('fs');
-#             fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/run_id.zip`, Buffer.from(download.data));
-
       - name: Unzip and read
         run: |
-          echo ${{ github.run_id }}
-          url="https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ github.event.workflow_run.id }}/logs"
-          echo $url
-          curl -L eSandrone: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 -H "Accept: application/vnd.github+json" --url "$url"
+          python ./python/get-logs.py ${{ github.event.workflow_run.id }}
           ls
+          #echo ${{ github.run_id }}
+          #url="https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ github.event.workflow_run.id }}/logs"
+          #echo $url
+          #curl -L eSandrone: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 -H "Accept: application/vnd.github+json" --url "$url"
+          #ls
           #unzip *.zip
           #ls
