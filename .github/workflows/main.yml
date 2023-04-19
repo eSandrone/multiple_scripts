@@ -23,15 +23,15 @@ jobs:
           echo ${{ github.job }} 
           #$time = [Math]::Round((Get-Date).ToFileTime()/10000)
           #echo "::set-output name=st::$time"
-          python ./python/wait.py 2>&1 | tee log.txt
+          #python ./python/wait.py 2>&1 | tee log.txt
           ls
-          cat log.txt
+          #cat log.txt
           echo "::set-output name=gj::${{ github.run_id }}"
           #echo "st=$time" >> $env:GITHUB_OUTPUT
           echo ${{ github.run_id }} > run_id.txt
           
       - name: Upload
-        uses: actions/upload-artifact@V3
+        uses: actions/upload-artifact@v3
         with:
           name: run_id
           path: run_id.txt
