@@ -39,17 +39,11 @@ jobs:
 
       - name: Unzip and read
         run: |
+          echo ${{ github.run_id }}
+          curl -L \
+          eSandrone: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 \
+          -H "Accept: application/vnd.github+json" \
+          --url https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ github.event.workflow_run.id }}/logs
           ls
-          unzip run_id.zip
+          unzip *.zip
           ls
-          cat run_id.txt 
-          
-            
-      
-
-          #echo ${{ github.run_id }}
-          #curl -L \
-          #eSandrone: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 \
-          #-H "Accept: application/vnd.github+json" \
-          #--url https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ needs.job_1.outputs.gj }}/logs
-          #ls
