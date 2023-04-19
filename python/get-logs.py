@@ -26,4 +26,4 @@ response = requests.request(
 
 print(response.content)
 
-open('./logs/logs.zip', 'wb').write(response.content)
+open('logs.zip', 'wb').write(response.content)
