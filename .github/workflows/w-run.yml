@@ -1,0 +1,22 @@
+name: w-run
+on:
+  workflow_run:
+   workflows: ["Time"]
+   types:
+    - completed
+jobs:
+  job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download logs
+        id: time
+        run: |          
+          echo ${{ github.run_id }}
+          #curl -L \
+          #eSandrone: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 \
+          #-H "Accept: application/vnd.github+json" \
+          #--url https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ needs.job_1.outputs.gj }}/logs
+          #ls
