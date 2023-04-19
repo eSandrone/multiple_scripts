@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        
+      - name: Try
+        run: |
+          echo ${{ github.event.workflow_run.id }}
 
       - name: Download logs
         id: time
