@@ -42,10 +42,10 @@ jobs:
           echo ${{ github.run_id }}
           url="https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ github.event.workflow_run.id }}/logs"
           echo $url
-          #curl -L \
-          #eSandrone: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 \
-          #-H "Accept: application/vnd.github+json" \
-          #--url https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ github.event.workflow_run.id }}/logs
+          curl -L \
+          eSandrone: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\
+          -H "Accept: application/vnd.github+json"\
+          --url $url
           ls
           #unzip *.zip
           #ls
