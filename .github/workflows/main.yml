@@ -20,7 +20,8 @@ jobs:
       - name: Execute scripts and kill process if necessary
         id: time
         run: |
-          echo ${{ github.job }} 
+          #echo ${{ github.job }} 
+          echo ${{ github.run_id }} 
           #$time = [Math]::Round((Get-Date).ToFileTime()/10000)
           #echo "::set-output name=st::$time"
           #python ./python/wait.py 2>&1 | tee log.txt
