@@ -39,11 +39,12 @@ jobs:
         id: time
         run: |
           curl -L \
+          eSandrone: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 \
           -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer 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"\
           --url https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ needs.job_1.outputs.gj }}/logs
           ls
           echo ${{ github.run_id }}
+          #-H "Authorization: Bearer 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"\
           #echo ${{ needs.job_1.outputs.time }}[1]
 
 #   job_2:
