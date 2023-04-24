@@ -1,6 +1,7 @@
 name: Wait test
 on:
   workflow_dispatch:
+  workflow_call:
 jobs:
   time:
     runs-on: ubuntu-latest
