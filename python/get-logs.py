@@ -27,3 +27,6 @@ response = requests.request(
 print(response.content)
 
 open('logs.zip', 'wb').write(response.content)
+
+with zipfile.ZipFile('logs.zip', 'r') as zip:
+    zip.extractall()
