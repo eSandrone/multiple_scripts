@@ -36,24 +36,9 @@ jobs:
         with:
           name: run_id
           path: run_id.txt
-#   job_2:
-#     runs-on: ubuntu-latest
-#     needs: job_1
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v3
-
-#       - name: Execute scripts and kill process if necessary
-#         id: time
-#         run: |
-#           curl -L \
-#           eSandrone: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 \
-#           -H "Accept: application/vnd.github+json" \
-#           --url https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/${{ needs.job_1.outputs.gj }}/logs
-#           ls
-#           echo ${{ github.run_id }}
-#           #-H "Authorization: Bearer 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"\
-#           #echo ${{ needs.job_1.outputs.time }}[1]
+  job_2:
+    needs: job_1
+    uses: eSandrone/multiple_scripts/.github/workflows/parallel_scripts.yml@main
 
 #   job_2:
 #     runs-on: ubuntu-latest
