@@ -5,7 +5,8 @@ import zipfile
 import requests
 from requests.auth import HTTPBasicAuth
 
-github_token = "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"
+# github_token = "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"
+github_token = "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"
 run_id = sys.argv[1]
 image = "2"
 
