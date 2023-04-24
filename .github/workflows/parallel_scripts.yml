@@ -14,17 +14,4 @@ jobs:
           python-version: "pypy3.9"
 
       - name: Execute scripts and kill process if necessary
-        run: |
-          pip install pymsteams
-          python ./python/webhook.py
-          #chmod u+x ./bash/script.sh
-          #python ./python/message.py
-          #python ./python/wait.py & sleep 10;
-          #pid_ye=`echo "$!"`
-          #ps aux | grep -i "wait.py"
-          #echo $pid_ye
-          #pgrep -U $pid_ye
-          #if pgrep -x "python ./python/wait.py" > /dev/null
-          #then
-          #  python ./python/message.py
-          #fi
+        run: sleep 15
