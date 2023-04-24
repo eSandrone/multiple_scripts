@@ -23,7 +23,7 @@ jobs:
       - name: Unzip and read
         run: |
           pip install requests
-          sudo apt-get install unzip
+          sudo apt-get install unzip -y
           python ./python/get-logs.py ${{ github.event.workflow_run.id }}
           ls
           unzip logs.zip
