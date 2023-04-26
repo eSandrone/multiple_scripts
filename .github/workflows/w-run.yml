@@ -19,7 +19,8 @@ jobs:
         
       - name: Try
         run: |
-          matrix='{"include":[{"image": "AWP", "component": "AWP", "url": "https://atc.bmwgroup.net/bitbucket/scm/ispi/ueg-awp-testautomation.git", "command": "make st", "framework": "selenium", "report-position": "build/reports/cucumber.json", "test-type": "smoke", "images": "awp-backend-vehicle", "urlCode": "https://atc-github.azure.cloud.bmw/Service-and-Repairs/awp-backend-vehicle"}]}'
+          #matrix='{"include":[{"image": "AWP", "component": "AWP", "url": "https://atc.bmwgroup.net/bitbucket/scm/ispi/ueg-awp-testautomation.git", "command": "make st", "framework": "selenium", "report-position": "build/reports/cucumber.json", "test-type": "smoke", "images": "awp-backend-vehicle", "urlCode": "https://atc-github.azure.cloud.bmw/Service-and-Repairs/awp-backend-vehicle"}]}'
+          matrix='{"include":[{ "no-test-found": "True" }]}'
           #framework=`echo $matrix | python3 -c "import sys, json; print(json.load(sys.stdin)['include']['framework'])"`
           framework=`echo $matrix | jq -r '.include[].framework'`
           echo $framework
