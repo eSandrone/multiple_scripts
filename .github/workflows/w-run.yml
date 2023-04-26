@@ -63,9 +63,9 @@ jobs:
           while IFS= read -r "variable$n"; do
             n=$((n + 1))
           done < run_id.txt
-          echo variable1
-          echo variable2
-          echo variable3
+          echo $variable1
+          echo $variable2
+          echo $variable3
           #pip install requests
           #sudo apt-get install unzip -y
           #python ./python/get-logs.py ${{ github.event.workflow_run.id }}
