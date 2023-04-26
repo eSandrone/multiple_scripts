@@ -30,6 +30,8 @@ jobs:
           echo "::set-output name=gj::${{ github.run_id }}"
           #echo "st=$time" >> $env:GITHUB_OUTPUT
           echo ${{ github.run_id }} > run_id.txt
+          echo "LELLO" >> run_id.txt
+          echo "TREN468" >> run_id.txt
           
       - name: Upload
         uses: actions/upload-artifact@v3
