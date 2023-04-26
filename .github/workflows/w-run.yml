@@ -45,7 +45,10 @@ jobs:
 
       - name: Unzip and read
         run: |
-          pip install requests
-          sudo apt-get install unzip -y
-          python ./python/get-logs.py ${{ github.event.workflow_run.id }}
+          unzip run_id.zip
           ls
+          cat run_id.txt
+          #pip install requests
+          #sudo apt-get install unzip -y
+          #python ./python/get-logs.py ${{ github.event.workflow_run.id }}
+          #ls
