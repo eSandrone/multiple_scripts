@@ -18,7 +18,7 @@ jobs:
         
       - name: Try
         run: |
-          echo ${{ github.event.workflow_run.id }}
+          echo ${{ github.event.workflow_run }}
 
       - name: Unzip and read
         run: |
