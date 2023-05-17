@@ -16,7 +16,7 @@ jobs:
 
       - name: get workflows ids
         run: |
-          curl -L\
+          curl -L \
           -H "Authorization: Bearer ${{ secrets.TOKEN }}"\
           -H "Accept: application/vnd.github+json"\
           https://api.github.com/repos/eSandrone/multiple_scripts/actions/workflows
