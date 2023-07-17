@@ -16,4 +16,5 @@ jobs:
 
       - name: get workflows ids
         run: |
+          pip install requests
           curl -L -H "Authorization: Bearer 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" -H "Accept: application/vnd.github+json" https://api.github.com/repos/eSandrone/multiple_scripts/actions/workflows
