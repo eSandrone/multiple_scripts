@@ -16,5 +16,6 @@ jobs:
 
       - name: Execute python script
         run: |
+          pip install requests
           python ./python/get_last_workflow_execution.py 
           
