@@ -9,7 +9,7 @@ GITHUB_USER = 'qxz30ra'
 
 # VARIABLES
 now = datetime.now().strftime("%H:%M:%S")
-github_token = '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'
+github_token = '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'
 workflow_id = sys.argv[2] if len(sys.argv) > 2 else 57488918
 url = 'https://api.github.com/repos/eSandrone/multiple_scripts/actions/workflows/{}/runs'.format(workflow_id)
 
