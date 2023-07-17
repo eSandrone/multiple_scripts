@@ -17,5 +17,6 @@ jobs:
       - name: Execute python script
         run: |
           pip install requests
-          python ./python/get_last_workflow_execution.py 
+          python ./python/get_last_workflow_execution.py
+          curl -H "Authorization: Bearer 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" https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/5573579546
           
