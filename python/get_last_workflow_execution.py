@@ -21,7 +21,7 @@ headers = {
 }
 response_json = requests.get(url, auth=auth, headers=headers).json()
 #sys.stdout.write(json.dumps(response_json['workflow_runs'][0], indent=4))
-sys.stdout.write(response_json)
+sys.stdout.write(json.dumps(response_json, indent=4))
 data = response_json['workflow_runs'][0]['run_started_at']
 run_started_at = data.replace('T', '').replace('Z', '')
 then = datetime.strptime(run_started_at, "%Y-%m-%d%H:%M:%S")
