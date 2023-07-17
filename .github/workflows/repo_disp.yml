@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Print payload
+    - name: Print ${{ github.event.client_payload.test }}
       run: |
         echo ${{ github.event.client_payload.test }}
