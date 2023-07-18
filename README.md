@@ -1,2 +1,2 @@
 # multiple_scripts
-Tesing scripts in python
+Testing scripts in python
