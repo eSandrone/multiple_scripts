@@ -28,8 +28,8 @@ def get_workflow_executions(token: str, id: int, only_last_execution: str, hours
     """ Permette di recuperare tutte le esecuzioni di un dato workflow
     Se il parametro 'only_last_execution' è True, questa funzione si comporta come lo script get_last_workflow_execution.py già presente
     altrimenti recupera tutti gli id delle esecuzioni avvenute entro il valore di 'hours' (di default 23)
-    Successivamente vengono fatte n repository dispatch sul workflow che manda il messaggio su teams già presente in pip (da modificare per farlo funzionare correttamente)
-    Possibile modifica: far mandare la notifica direttamente da questo script
+    Successivamente vengono fatte n chiamate tramite webhook per mandare messaggio su teams (da modificare file teams.json per farlo funzionare correttamente)
+    Possibile modifica: far mandare la notifica direttamente da questo script (già fatto)
     NB Inserire nel file teams.json anche il webhook del canale per ogni team (da richiedere)
     """
     url = '{}/workflows/{}/runs'.format(GITHUB_API_BASE_URL, id)
