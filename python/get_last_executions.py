@@ -5,7 +5,7 @@ from requests.auth import HTTPBasicAuth
 from datetime import datetime
 
 
-# TOKEN NON FUNZIONANTE (al momento nello script ma a sarà un paramentro di ingresso)
+# TOKEN NON FUNZIONANTE (al momento nello script ma sarà un parametro di ingresso)
 # Per test in locale delle funzioni non è necessario il token (commentare righe 35-36-37-59-60-61 e togliere il commento a righe 38-62-63-65 per eseguire lo script)
 # Per testare get_webhook_for_team() commmentare riga 99 e togliere il commento da riga 100
 # NB Per avviare lo script sono necessari i primi tre input (github_token, workflow_id e only_last_execution) anche se non verrano utilizzati in locale
