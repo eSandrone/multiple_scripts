@@ -1,0 +1,115 @@
+{
+    "Kobra": {
+        "component": "KAI",
+        "webhook": "webhook for team KOBRA",
+        "supported-test-suites": {
+            "functional": {
+                "applications": {
+                    "APP1": {
+                        "url": "",
+                        "command": "",
+                        "framework": "",
+                        "secrets": "",
+                        "report-position": ""
+                    }
+                }
+            }
+        }
+    },
+    "Tau": {
+        "component": "TSARA",
+        "webhook": "webhook for team TAU",
+        "supported-test-suites": {
+            "ui": {
+                "applications": {
+                    "APP1": {
+                        "url": "",
+                        "command": "",
+                        "framework": "",
+                        "report-position": ""
+                    },
+                    "APP2": {
+                        "url": "",
+                        "command": "",
+                        "framework": "",
+                        "report-position": ""
+                    }
+                }
+            }
+        }
+    },
+    "Zulu": {
+        "component": "CARS",
+        "webhook": "webhook for team ZULU",
+        "supported-test-suites": {
+            "functional": {
+                "applications": {
+                    "APP1": {
+                        "url": "",
+                        "command": "",
+                        "framework": "",
+                        "report-position": ""
+                    }
+                }
+            },
+            "ui": {
+                "applications": {
+                    "APP2": {
+                        "url": "",
+                        "command": "",
+                        "framework": "",
+                        "username-and-password-id": "",
+                        "report-position": "",
+                        "container": ""
+                    }
+                }
+            }
+        }
+    },
+    "DevNull ": {
+        "component": "AWP",
+        "webhook": "webhook for team DEVNULL",
+        "supported-test-suites": {
+            "smoke_test": {
+                "multimage":"true",
+                "applications": {
+                    "APP": { 
+                        "url": "",
+                        "command": "",
+                        "framework": "",
+                        "report-position": "",
+                        "java-version": "",
+                        "images": {
+                            "image-1": "",
+                            "image-2": "",
+                            "image-3": "",
+                            "image-4": "",
+                            "image-5": "",
+                            "image-6": "",
+                            "image-7": "",
+                            "image-8": "",
+                            "image-9": ""
+                        }
+                    }
+                }
+            }
+        } 
+    },
+    "Test team name": {
+        "component": "KAI",
+        "webhook": "https://reply.webhook.office.com/webhookb2/59c3cad9-c5a1-4759-a4f9-9860eac71458@b00367e2-193a-4f48-94de-7245d45c0947/IncomingWebhook/c40aafce2a2e4eb58be581b2e2111f9b/96114bde-0d35-4577-9a52-4a1fb34fc9eb",
+        "supported-test-suites": {
+            "functional": {
+                "applications": {
+                    "APP1": {
+                        "url": "",
+                        "command": "",
+                        "framework": "",
+                        "secrets": "",
+                        "report-position": ""
+                    }
+                }
+            }
+        }
+    }
+}
