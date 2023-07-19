@@ -97,7 +97,7 @@
     },
     "Test team name": {
         "component": "KAI",
-        "webhook": "https://reply.webhook.office.com/webhookb2/59c3cad9-c5a1-4759-a4f9-9860eac71458@b00367e2-193a-4f48-94de-7245d45c0947/IncomingWebhook/c40aafce2a2e4eb58be581b2e2111f9b/96114bde-0d35-4577-9a52-4a1fb34fc9eb",
+        "webhook": "",
         "supported-test-suites": {
             "functional": {
                 "applications": {
