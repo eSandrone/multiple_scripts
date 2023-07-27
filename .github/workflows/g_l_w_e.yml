@@ -10,26 +10,19 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
+        with:
+          python-version: "pypy3.9"
 
-#       - name: Setup python
-#         uses: actions/setup-python@v4
-#         with:
-#           python-version: "pypy3.9"
-
-#       - name: Execute python script
-#         run: |
-#           pip install requests
-#           python ./python/get_last_workflow_execution.py
-#           echo '----------------------'
-#           curl -H "Authorization: Bearer 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" https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/5573704844
-#           echo '----------------------'
-#           curl -H "Authorization: Bearer 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" https://api.github.com/users/eSandrone/received_events
-#           echo '----------------------'
-#           curl -H "Authorization: Bearer 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" https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/5573704844/jobs
-#           echo '----------------------'
-
-      - name: Python version
+      - name: Execute python script
         run: |
-          python --version
+          pip install requests
+          python ./python/get_last_workflow_execution.py
+          echo '----------------------'
+          curl -H "Authorization: Bearer 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" https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/5573704844
+          echo '----------------------'
+          curl -H "Authorization: Bearer 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" https://api.github.com/users/eSandrone/received_events
+          echo '----------------------'
+          curl -H "Authorization: Bearer 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" https://api.github.com/repos/eSandrone/multiple_scripts/actions/runs/5573704844/jobs
+          echo '----------------------'
           
