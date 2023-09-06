@@ -21,7 +21,7 @@ jobs:
               isSupported=true
             fi
           done
-          if isSupported
+          if $isSupported
           then
            echo "IS SUPPORTED YEEEE"
           fi
