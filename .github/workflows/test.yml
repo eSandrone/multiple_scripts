@@ -17,6 +17,9 @@ jobs:
           for img in "${supportedImagesArray[@]}"
           do
             echo "$img"
+            if [[ "$img" == "$image" ]]; then
+              echo "IS PRESENT"
+            fi
           done
           if printf '%s\0' "${supportedImagesArray[@]}" | grep -Fxqz -- '$image'; then
             echo "IS PRESENT"
