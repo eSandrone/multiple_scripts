@@ -12,7 +12,7 @@ jobs:
       - name: test bash list
         run: |
           supported_images="lello1,pino2,pinocc3,res4,e5"
-          IFS=',' read -ra supportedImagesArray << "$supported_images"
+          IFS=',' read -ra supportedImagesArray <<< "$supported_images"
           if [[ $[supportedImagesArray[@]] =~ "pino" ]]; then
             echo "IS PRESENT"
           else
