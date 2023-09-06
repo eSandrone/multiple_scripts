@@ -12,7 +12,7 @@ jobs:
       - name: test bash list
         run: |
           supported_images="lello1,pino2,pinocc3,res4,e5"
-          image="pinocc3,"
+          image="pinocc3"
           IFS=',' read -ra supportedImagesArray <<< "$supported_images"
           for img in "${supportedImagesArray[@]}"
           do
