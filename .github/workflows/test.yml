@@ -12,8 +12,9 @@ jobs:
       - name: test bash list
         run: |
           supported_images="lello1,pino2,pinocc3,res4,e5"
+          image="pinocc3"
           IFS=',' read -ra supportedImagesArray <<< "$supported_images"
-          if [[ ${supportedImagesArray[@]} == "pinocc3," ]]; then
+          if [[ "${supportedImagesArray[*]}" == "$image" ]]; then
             echo "IS PRESENT"
           else
             echo "IS NOT PRESENT"
