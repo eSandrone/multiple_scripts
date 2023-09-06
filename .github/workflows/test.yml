@@ -14,6 +14,10 @@ jobs:
           supported_images="lello1,pino2,pinocc3,res4,e5"
           image="pinocc3,"
           IFS=',' read -ra supportedImagesArray <<< "$supported_images"
+          for img in "${supportedImagesArray[@]}"
+          do
+            echo "$img"
+          done
           if printf '%s\0' "${supportedImagesArray[@]}" | grep -Fxqz -- '$image'; then
             echo "IS PRESENT"
           else
