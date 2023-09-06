@@ -13,7 +13,7 @@ jobs:
         run: |
           supported_images="lello1,pino2,pinocc3,res4,e5"
           IFS=',' read -ra supportedImagesArray <<< "$supported_images"
-          if [[ ${supportedImagesArray[@]} == "pino" ]]; then
+          if [[ ${supportedImagesArray[@]} == "pinocc3" ]]; then
             echo "IS PRESENT"
           else
             echo "IS NOT PRESENT"
