@@ -28,6 +28,8 @@ jobs:
 
       - name: test replace substing in line 3
         run: |
-          sed -i '3s/"linea 3"/"riga 75"/' ./files/file-test.txt
+          str1="linea 3"
+          str2="riga 75"
+          sed -i '3s/$str1/$str2/' ./files/file-test.txt
           cat ./files/file-test.txt
       
