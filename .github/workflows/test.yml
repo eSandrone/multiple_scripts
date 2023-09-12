@@ -25,4 +25,9 @@ jobs:
           then
            echo "IS SUPPORTED YEEEE"
           fi
+
+      - name: test replace substing in line 3
+        run: |
+          sed -i '3i s/linea/riga' ./files/file-test.txt
+          cat ./files/file-test.txt
       
