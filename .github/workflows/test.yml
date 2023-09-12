@@ -30,6 +30,6 @@ jobs:
         run: |
           str1="linea 3"
           str2="riga 75"
-          sed -i '3s/linea 3/riga 75/' ./files/file-test.txt
+          sed -i '3s/linea 3/riga/75/' ./files/file-test.txt
           cat ./files/file-test.txt
       
